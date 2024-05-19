@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS fullcycle;
+
+CREATE USER IF NOT EXISTS 'secretuser'@'%' IDENTIFIED BY 'securepassword';
+
+GRANT ALL PRIVILEGES ON fullcycle.* TO 'secretuser'@'%';
+
+FLUSH PRIVILEGES;
+
+USE fullcycle;
+
+CREATE TABLE IF NOT EXISTS people (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
